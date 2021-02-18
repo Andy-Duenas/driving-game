@@ -1,5 +1,4 @@
 /* eslint-disable eqeqeq */
-/* eslint-disable no-console */
 var $carImg = document.querySelector('.img-container');
 
 var car = {
