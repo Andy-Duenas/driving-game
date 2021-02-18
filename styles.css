@@ -15,7 +15,7 @@ body {
 .img-container {
   width: 120px;
   height: 120px;
-  margin: 0;
+  transition-duration: 0.5s;
 }
 
 .right {

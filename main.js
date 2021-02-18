@@ -2,7 +2,11 @@
 /* eslint-disable no-console */
 var $carImg = document.querySelector('.img-container');
 
+var car = {
+  position: []
+};
 addEventListener('keydown', function (event) {
+  console.log($carImg.position);
   if (event.key == 'ArrowUp') {
     $carImg.className = 'img-container up';
   } else if (event.key == 'ArrowDown') {
