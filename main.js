@@ -10,7 +10,6 @@ var car = {
 function start() {
   car.x += 10;
   var newPx = car.x + 'px';
-  console.log(newPx);
   $carImg.style.left = newPx;
 }
 
