@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 var $carImg = document.querySelector('.img-container');
 
@@ -31,7 +30,6 @@ function start() {
     newPx = car.y + 'px';
     $carImg.style.top = newPx;
   }
-  console.log(newPx);
 }
 
 var idInterval;
