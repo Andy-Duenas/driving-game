@@ -12,6 +12,7 @@ function start() {
   var newPx = car.x + 'px';
   $carImg.style.left = newPx;
 }
+var idInterval;
 
 addEventListener('keydown', function (event) {
   if (event.key == 'ArrowUp') {
@@ -22,7 +23,11 @@ addEventListener('keydown', function (event) {
     $carImg.className = 'img-container right';
   } else if (event.key == 'ArrowLeft') {
     $carImg.className = 'img-container left';
-  } else if (event.key == ' ') {
-    var idInterval = setInterval(start, 16);
+  } else if (event.key == ' ' && car.hasStarted === false) {
+    idInterval = setInterval(start, 50);
+    car.hasStarted = true;
+  } else if (event.key == ' ' && car.hasStarted === true) {
+    clearInterval(idInterval);
+    car.hasStarted = false;
   }
 });
