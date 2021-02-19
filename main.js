@@ -1,6 +1,17 @@
 /* eslint-disable eqeqeq */
-/* eslint-disable no-console */
 var $carImg = document.querySelector('.img-container');
+
+var car = {
+  x: 0,
+  y: 0,
+  hasStarted: false
+};
+
+function start() {
+  car.x += 10;
+  var newPx = car.x + 'px';
+  $carImg.style.left = newPx;
+}
 
 addEventListener('keydown', function (event) {
   if (event.key == 'ArrowUp') {
@@ -11,5 +22,7 @@ addEventListener('keydown', function (event) {
     $carImg.className = 'img-container right';
   } else if (event.key == 'ArrowLeft') {
     $carImg.className = 'img-container left';
+  } else if (event.key == ' ') {
+    var idInterval = setInterval(start, 16);
   }
 });
