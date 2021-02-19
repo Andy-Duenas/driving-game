@@ -22,11 +22,7 @@ addEventListener('keydown', function (event) {
     $carImg.className = 'img-container right';
   } else if (event.key == 'ArrowLeft') {
     $carImg.className = 'img-container left';
-  }
-});
-
-addEventListener('keydown', function (event) {
-  if (event.key == ' ') {
+  } else if (event.key == ' ') {
     var idInterval = setInterval(start, 16);
   }
 });
