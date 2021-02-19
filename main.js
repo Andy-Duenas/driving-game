@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 var $carImg = document.querySelector('.img-container');
 
@@ -12,8 +13,10 @@ function start() {
   var newPx = car.x + 'px';
   $carImg.style.left = newPx;
 }
+var idInterval;
 
 addEventListener('keydown', function (event) {
+  console.log(car.hasStarted);
   if (event.key == 'ArrowUp') {
     $carImg.className = 'img-container up';
   } else if (event.key == 'ArrowDown') {
@@ -22,7 +25,11 @@ addEventListener('keydown', function (event) {
     $carImg.className = 'img-container right';
   } else if (event.key == 'ArrowLeft') {
     $carImg.className = 'img-container left';
-  } else if (event.key == ' ') {
-    var idInterval = setInterval(start, 16);
+  } else if (event.key == ' ' && car.hasStarted === false) {
+    idInterval = setInterval(start, 50);
+    car.hasStarted = true;
+  } else if (event.key == ' ' && car.hasStarted === true) {
+    clearInterval(idInterval);
+    car.hasStarted = false;
   }
 });
