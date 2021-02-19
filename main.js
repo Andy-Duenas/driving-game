@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 var $carImg = document.querySelector('.img-container');
 
@@ -16,7 +15,6 @@ function start() {
 var idInterval;
 
 addEventListener('keydown', function (event) {
-  console.log(car.hasStarted);
   if (event.key == 'ArrowUp') {
     $carImg.className = 'img-container up';
   } else if (event.key == 'ArrowDown') {
